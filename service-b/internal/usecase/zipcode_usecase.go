@@ -11,11 +11,11 @@ import (
 )
 
 type ZipCodeUseCase struct {
-	repository *repository.ZipCodeRepository
+	repository repository.ZipCodeRepositoryInterface
 	logger     logger.Logger
 }
 
-func NewZipCodeUseCase(repository *repository.ZipCodeRepository, logger logger.Logger) *ZipCodeUseCase {
+func NewZipCodeUseCase(repository repository.ZipCodeRepositoryInterface, logger logger.Logger) *ZipCodeUseCase {
 	return &ZipCodeUseCase{
 		repository: repository,
 		logger:     logger,

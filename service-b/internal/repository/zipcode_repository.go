@@ -10,6 +10,11 @@ import (
 	"go.opentelemetry.io/otel"
 )
 
+type ZipCodeRepositoryInterface interface {
+	GetLocationByZipCode(ctx context.Context, zipCode string) (*zipcode.Location, error)
+	GetWeatherByCity(ctx context.Context, city string) (*zipcode.WeatherData, error)
+}
+
 type ZipCodeRepository struct {
 	viaCEPClient     *clients.ViaCEPClient
 	weatherAPIClient *clients.WeatherAPIClient

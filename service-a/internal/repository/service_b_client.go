@@ -18,6 +18,10 @@ import (
 	"go.opentelemetry.io/otel"
 )
 
+type ServiceBClientInterface interface {
+	GetWeatherByZipCode(ctx context.Context, zipCode string) (*WeatherResponse, error)
+}
+
 type ServiceBClient struct {
 	client  *http.Client
 	cfg     *config.Config

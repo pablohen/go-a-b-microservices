@@ -11,11 +11,11 @@ import (
 )
 
 type ZipCodeUseCase struct {
-	serviceBClient *repository.ServiceBClient
+	serviceBClient repository.ServiceBClientInterface
 	logger         logger.Logger
 }
 
-func NewZipCodeUseCase(serviceBClient *repository.ServiceBClient, logger logger.Logger) *ZipCodeUseCase {
+func NewZipCodeUseCase(serviceBClient repository.ServiceBClientInterface, logger logger.Logger) *ZipCodeUseCase {
 	return &ZipCodeUseCase{
 		serviceBClient: serviceBClient,
 		logger:         logger,
